@@ -9,18 +9,12 @@
 <body>
   <main class="container">
     <h1>Lip Reading AI</h1>
-    <p class="subtitle">Live webcam stream with mock lip-reading prediction</p>
+    <p class="subtitle">Live browser camera with mock lip-reading prediction</p>
 
-    <div class="video-wrapper">
-      <img id="video-feed" src="{{ url_for('video_feed') }}" alt="Live webcam feed" />
+    <div class="video-container" aria-live="polite">
+      <video id="video" autoplay playsinline muted></video>
+      <div id="subtitle">Listening...</div>
     </div>
-
-    <button id="predict-btn" type="button">Predict</button>
-
-    <section class="result-box" aria-live="polite">
-      <h2>Prediction</h2>
-      <p id="prediction-text">Press Predict to analyze the latest frames.</p>
-    </section>
   </main>
 
   <script src="{{ url_for('static', filename='script.js') }}"></script>
