@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lip Reading AI</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <main class="container">
+    <h1>Lip Reading AI</h1>
+    <p class="subtitle">Live webcam stream with mock lip-reading prediction</p>
+
+    <div class="video-wrapper">
+      <img id="video-feed" src="{{ url_for('video_feed') }}" alt="Live webcam feed" />
+    </div>
+
+    <button id="predict-btn" type="button">Predict</button>
+
+    <section class="result-box" aria-live="polite">
+      <h2>Prediction</h2>
+      <p id="prediction-text">Press Predict to analyze the latest frames.</p>
+    </section>
+  </main>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
